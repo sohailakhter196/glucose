@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mg/dL to mmol/L Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>mg/dL to mmol/L Converter</h2>
+
+    <label for="mgdlInput">Enter mg/dL:</label>
+    <input
+      type="number"
+      id="mgdlInput"
+      placeholder="Enter mg/dL"
+      oninput="convert()"
+    />
+
+    <button onclick="convert()">Convert</button>
+
+    <p id="result"></p>
+
+    <p></p>
+      Visit
+      <a
+        href="https://www.calculatorway.com/mg-dl-to-mmol-l-calculator/"
+        target="_blank"
+        >visit calculatorway</a
+      >
+    </p>
+    <h1>How to Convert Glucose mg/dL to mmol/L</h1>
+
+    <p>There are several ways to convert glucose measurements from milligrams per deciliter (mg/dL) to millimoles per liter (mmol/L):</p>
+    
+    <h2>1. Use the Conversion Formula</h2>
+    
+    <p>The formula for converting mg/dL to mmol/L is:</p>
+    
+    <p><strong>mmol/L = mg/dL ÷ 18</strong></p>
+    
+    <p>For example, to convert 150 mg/dL to mmol/L:</p>
+    
+    <p><strong>mmol/L = 150 mg/dL ÷ 18 = 8.33 mmol/L</strong></p>
+    
+    <h2>2. Use a Conversion Table</h2>
+    
+    <table>
+    <thead>
+    <tr>
+    <th>mg/dL</th>
+    <th>mmol/L</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>70</td>
+    <td>3.9</td>
+    </tr>
+    <tr>
+    <td>100</td>
+    <td>5.6</td>
+    </tr>
+    <tr>
+    <td>150</td>
+    <td>8.3</td>
+    </tr>
+    <tr>
+    <td>200</td>
+    <td>11.1</td>
+    </tr>
+    <tr>
+    <td>250</td>
+    <td>13.9</td>
+    </tr>
+    <tr>
+    <td>300</td>
+    <td>16.7</td>
+    </tr>
+    </tbody>
+    </table>
+    <script>
+      function convert() {
+        // Get the mg/dL value from the input
+        var mgdlValue = document.getElementById("mgdlInput").value;
+
+        // Check if the input is a valid number
+        if (isNaN(mgdlValue)) {
+          document.getElementById("result").innerHTML =
+            "Please enter a valid number.";
+          return;
+        }
+
+        // Perform the conversion
+        var mmolValue = mgdlValue / 18.016;
+
+        // Display the result
+        document.getElementById("result").innerHTML =
+          mgdlValue +
+          " mg/dL is approximately " +
+          mmolValue.toFixed(2) +
+          " mmol/L.";
+      }
+    </script>
+  </body>
+</html>
